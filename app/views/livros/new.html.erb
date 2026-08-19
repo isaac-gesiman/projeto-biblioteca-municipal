@@ -1,0 +1,44 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Cadastro de Livro</h2>
+<div class="containerCadastroUsuariopai">
+  <div class="painelCategoria">
+    <%= form_with model: @livro do |form| %>
+
+      <div>
+        <%= form.label :titulo, "Nome do livro", class:"itemCategoria" %>
+        <%= form.text_field :titulo, required: true, class:"preencher" %>
+      </div>
+
+      <div>
+        <%= form.label :autor, "Autor", class:"itemCategoria" %>
+        <%= form.text_field :autor, required: true, class:"preencher" %>
+      </div>
+
+      <div>
+        <%= form.label :categoria_id, "Categoria", class:"itemCategoria" %>
+        <%= form.collection_select :categoria_id, @categorias, :id, :nome, {}, class:"preencher"%>
+      </div>
+
+      <div>
+        <%= form.label :idade_minima, "Idade mínima", class:"itemCategoria"  %>
+        <%= form.number_field :idade_minima, required: true, min: 0, class:"preencherIdade" %>
+      </div>
+
+      <div>
+        <%= form.label :observacoes, "Observações", class:"itemCategoria" %>
+        <%= form.text_area :observacoes, class:"preencherOBS" %>
+      </div>
+
+      <div>
+        <%= form.submit "Cadastrar livro", class:"botaoEmprestimo" %>
+      </div>
+  </div>
+</div>
+
+<% end %>

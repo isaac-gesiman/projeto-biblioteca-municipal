@@ -1,0 +1,27 @@
+<h1>Redefinir senha</h1>
+
+<% if @bibliotecario.errors.any? %>
+  <div>
+    <% @bibliotecario.errors.full_messages.each do |mensagem| %>
+      <p><%= mensagem %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_with url: redefinir_senha_path(params[:token]), method: :patch do |form| %>
+
+  <div>
+    <%= form.label :password, "Nova senha" %>
+    <%= form.password_field :password, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation, "Confirmar nova senha" %>
+    <%= form.password_field :password_confirmation, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Alterar senha" %>
+  </div>
+
+<% end %>

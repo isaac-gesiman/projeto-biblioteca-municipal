@@ -1,0 +1,14 @@
+<h1>Redefinição de senha</h1>
+
+<p>Olá, <%= @bibliotecario.nome %>.</p>
+
+<p>Recebemos uma solicitação para redefinir sua senha.</p>
+
+<p>
+  <%= link_to "Criar nova senha",
+      redefinir_senha_url(@token, host: "localhost", port: 3000) %>
+</p>
+
+<p>Este link expira em 15 minutos.</p>
+
+<p>Se você não solicitou a redefinição, ignore este e-mail.</p>

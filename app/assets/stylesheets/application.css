@@ -1,0 +1,408 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+ /*menu*/
+.faixada {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0cc0df;
+    box-sizing: border-box;
+}
+.h1faixa{
+    color: white;
+    margin:0 50px 0 50px;
+}
+
+.logo-prefeitura{
+  width: 50px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.itemFaixa, h1{
+    font-size: 4vw;
+    font-weight: bold;
+}
+/*cadastro bibliotecario*/
+/*titulo de tamanho padrão*/
+.titulo{
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: black;
+    margin:20px 0 20px 50px;
+}
+
+.logo-prefeitura{
+    width: 18vw;
+}
+
+.containerCadastroBibliotecariopai{
+    display: grid;
+    place-items: center;
+}
+
+.containerCadastroBibliotecario {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #0cc0df;
+}
+
+.form-group{
+    margin: 10px;
+    width: 100px;
+    font-size: 2vw;
+    color:white;
+}
+
+.preencher{
+    border: 0px white;
+    border-radius: 2px;
+    height: 2vw;
+    width:270px;
+    font-size: 1.3vw;
+}
+
+/*esqueceu senha*/
+.infomeCPF{
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: black;
+    margin: 20px 0 20px 50px;
+}
+
+.containerCPFpai{
+    display: grid;
+    place-items: center;
+}
+
+.containerCPFfilho{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #0cc0df;
+    gap: 20px;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.itemCPF{
+    font-size:1.5vw;
+}
+
+.botao{
+    font-size: 1.5vw;
+    border: 0px ;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.preencherCPF{
+    border: 0px white;
+    height: 2vw;
+    width: 235px;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+/*parte de login*/
+.containerLoginPai{
+    display: grid;
+    justify-content: center;
+}
+
+
+.containerLogin{
+    background-color: #0cc0df;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.loginBibliotecario{
+    font-size: 2vw;
+    color: white;
+    border-radius: 10px;
+}
+.loginBibliotecariosenha{
+    font-size: 2vw;
+    color: white;
+    margin:0 9px 0 0;
+}
+
+.esqueceBibliotecario{
+    font-size: 1.3vw;
+    color: white;
+}
+
+.botaoEntrar{
+    height: 1.7vw;
+    border: 0px white;
+    font-size: 1.3vw;
+}
+
+.preencherLoginB{
+    height: 2vw;
+    width: 200px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+/*painel do bibliotecario*/
+.containerPainelPai{
+    display: grid;
+    justify-content: center;
+}
+
+.containerPainel{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    
+}
+
+.itemPainel{
+    margin: 20px;
+    background-color: #0cc0df;
+    font-size: 2vw;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.linkPainel{
+    color: white;
+    text-decoration: none;
+}
+
+.sairPainelPai{
+    display: grid;
+    justify-content: end;
+}
+
+.sairPainel{
+    border:0px beige;
+}
+
+/*painel e login de usuario*/
+.painelLogin{
+    display: grid;
+    grid-template-columns: 1fr ;
+    font-size:1.5vw;
+}
+
+/*nova senha usuario*/
+.containerLNovaUPai{
+    display: grid;
+    justify-content: center;
+}
+
+.containerNovaU{
+    display: grid;
+    background-color: #0cc0df;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    gap:10px;
+
+}
+
+.itemNovaU{
+    font-size: 2vw;
+    color:white;
+}
+
+.preencherNova1{
+    height: 2vw;
+    width: 329px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.preencherNova2{
+    height: 2vw;
+    width: 200px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.botaoSalvarNS{
+    border:0px beige;
+    height: 1.5vw;
+    border-radius: 5px;
+}
+
+/*novo emprestimo*/
+.PainelEmprestimoPai{
+    display: grid;
+    justify-content: center;
+}
+
+.PainelEmprestimo{
+    display: grid;
+    background-color: #0cc0df;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    gap:10px;
+}
+
+.itemEmprestimo{
+    font-size: 2vw;
+    color:white;
+}
+
+.preencherUE{
+    height: 2vw;
+    width: 390px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.preencherLE{
+    height: 2vw;
+    width: 419px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.preencherBE{
+    height: 2vw;
+    width: 327px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.preencherSE{
+    height: 2vw;
+    width: 220px;
+    border: 0px white;
+    border-radius: 5px;
+    font-size: 1.3vw;
+}
+
+.botaoEmprestimo{
+    border: 0px white;
+    font-size: 1.5vw;
+}
+
+.containerCadastroUsuariopai{
+    display: grid;
+    place-items: center;
+}
+
+.containerCadastroUsuario{
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #0cc0df;
+    padding: 10px;
+}
+
+.painelCategoria{
+    background-color: #0cc0df;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.preencherOBS{
+    border: 0px white;
+    border-radius: 2px;
+    height: 1.8vw;
+    width:290px;
+    font-size: 1.2vw;
+    margin: 5px 0 0 0;
+}
+
+.preencherIdade{
+    border: 0px white;
+    border-radius: 2px;
+    height: 1.8vw;
+    width:290px;
+    font-size: 1.2vw;
+}
+
+.itemCategoria{
+    font-size: 2vw;
+    color:white;
+    margin:10px;
+}
+
+/*pagina home*/
+.faixadaHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0cc0df;
+  height: 120px;
+  width: 100%;
+}
+
+.itemFaixaHome {
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.imgPref {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 40px;
+}
+
+.imgPref img {
+  display: block;
+  max-width: 300px;
+  height: auto;
+}
+
+.opcoes-login {
+  display: flex;
+  justify-content: center;
+  gap: 220px;
+  margin-top: 80px;
+}
+
+.botao-home {
+  background-color: #19bdd2;
+  color: white;
+  text-decoration: none;
+
+  width: 220px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+}

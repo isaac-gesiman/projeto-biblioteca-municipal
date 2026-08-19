@@ -1,0 +1,39 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Criar Nova Senha</h2>
+
+<div class="painelLogin">
+
+  <% if @usuario.errors.any? %>
+    <div>
+      <% @usuario.errors.full_messages.each do |mensagem| %>
+        <p><%= mensagem %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form_with url: nova_senha_usuario_path, method: :patch do |form| %>
+    <div class="containerLNovaUPai">
+      <div class="containerNovaU">
+        <div>
+          <%= form.label :password, "Nova senha", class:"itemNovaU" %>
+          <%= form.password_field :password, required: true, class:"preencherNova1" %>
+        </div>
+
+        <div>
+          <%= form.label :password_confirmation, "Confirmar nova senha", class:"itemNovaU" %>
+          <%= form.password_field :password_confirmation, required: true, class:"preencherNova2" %>
+        </div>
+
+        <div>
+          <%= form.submit "Salvar nova senha", class:"botaoSalvarNS" %>
+        </div>
+      </div>
+    </div>
+</div>
+<% end %>

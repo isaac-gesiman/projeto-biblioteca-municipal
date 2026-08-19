@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  livro: one
+  bibliotecario: one
+  data_emprestimo: 2026-08-17 19:25:53
+  data_prevista_devolucao: 2026-08-17
+  data_devolucao: 2026-08-17
+  status: MyString
+
+two:
+  usuario: two
+  livro: two
+  bibliotecario: two
+  data_emprestimo: 2026-08-17 19:25:53
+  data_prevista_devolucao: 2026-08-17
+  data_devolucao: 2026-08-17
+  status: MyString

@@ -1,0 +1,32 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Login de Usuário</h2>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_with url: login_usuario_path, method: :post do |form| %>
+<div class="containerLoginPai">
+  <div class="containerLogin">
+    <div>
+      <%= form.label :email, "E-mail",class:"loginBibliotecario" %>
+      <%= form.email_field :email, required: true, class:"preencherLoginB" %>
+    </div>
+
+    <div>
+      <%= form.label :password, "Senha", class:"loginBibliotecariosenha" %>
+      <%= form.password_field :password, required: true, class:"preencherLoginB" %>
+    </div>
+
+    <div>
+      <%= form.submit "Entrar",  class:"botaoEntrar" %>
+    </div>
+  </div>
+</div>
+<% end %>

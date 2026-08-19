@@ -1,0 +1,40 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+
+<h2 class="titulo">Cadastro de Bibliotecário</h2>
+
+<%= form_with model: @bibliotecario do |form| %>
+  <div class="containerCadastroBibliotecariopai">
+    <div class="containerCadastroBibliotecario">
+      <div class="form-group">
+        <%= form.label :nome, "Nome", class:"form-group" %>
+        <%= form.text_field :nome, required: true, class:"preencher" %>
+      </div>
+
+      <div class="form-group" >
+        <%= form.label :cpf, "CPF" %>
+        <%= form.text_field :cpf, required: true, class:"preencher" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :telefone, "Telefone" %>
+        <%= form.text_field :telefone, required: true, class:"preencher" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "E-mail" %>
+        <%= form.email_field :email, required: true, class:"preencher" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Cadastrar bibliotecário", class:"botaoSalvarNS" %>
+      </div>
+    </div>  
+  </div>
+
+<% end %>

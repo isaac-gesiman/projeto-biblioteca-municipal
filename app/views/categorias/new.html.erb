@@ -1,0 +1,24 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Cadastro de Categoria</h2>
+<div class="containerCadastroUsuariopai">
+
+    <%= form_with model: @categoria do |form| %>
+    <div class="containerCadastroUsuariopai">
+      <div class="painelCategoria">
+          <div>
+            <%= form.label :nome, "Nome da categoria", class:"itemEmprestimo" %>
+            <%= form.text_field :nome, required: true, class:"preencherSE" %>
+          </div>
+
+          <div>
+            <%= form.submit "Cadastrar categoria", class:"botaoEmprestimo" %>
+          </div>
+</div>
+
+<% end %>

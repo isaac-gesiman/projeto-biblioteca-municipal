@@ -1,0 +1,41 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+
+<h2 class="titulo">Painel do Bibliotecário</h2>
+
+<div class="containerPainelPai">  
+  <div class= "containerPainel">
+        <div class="itemPainel">
+          <%= link_to "Cadastrar novo usuário", new_usuario_path, class:"linkPainel" %>
+        </div>
+
+        <div class="itemPainel">
+          <%= link_to "Cadastrar novo bibliotecário", new_bibliotecario_path, class:"linkPainel" %>
+        </div>
+
+        <div class="itemPainel">
+          <%= link_to "Cadastrar novo livro", new_livro_path, class:"linkPainel" %>
+        </div>
+
+        <div class="itemPainel">
+          <%= link_to "Cadastrar nova categoria", new_categoria_path, class:"linkPainel" %>
+        </div>
+
+        <div class="itemPainel">
+          <%= link_to "Novo empréstimo", new_emprestimo_path, class:"linkPainel" %>
+        </div>
+
+        <div class="itemPainel">
+          <%= link_to "Empréstimos ativos", emprestimos_path, class:"linkPainel" %>
+        </div>
+  </div>
+</div>  
+
+<div class="sairPainelPai">
+  <%= button_to "Sair", logout_path, method: :delete, class:"sairPainel" %>
+</div>

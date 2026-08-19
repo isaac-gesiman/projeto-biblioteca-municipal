@@ -1,0 +1,28 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+
+<h2 class="titulo">Esqueci minha senha</h2>
+
+<p class="infomeCPF">Informe seu CPF para receber o link de recuperação no e-mail cadastrado.</p>
+
+<%= form_with url: esqueci_senha_path, method: :post do |form| %>
+  <div class="containerCPFpai">
+    <div class="containerCPFfilho">
+
+      <div class="itemCPF">
+        <%= form.label :cpf, "CPF" %>
+        <%= form.text_field :cpf, required: true,class: "preencherCPF" %>
+      </div>
+
+      <div class="itemCPF">
+        <%= form.submit "Enviar link de recuperação", class: "botao" %>
+      </div>
+    </div>  
+  </div>  
+
+<% end %>

@@ -1,0 +1,52 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Cadastro de Usuário</h2>
+<div class="containerCadastroUsuariopai">
+    <div class="containerCadastroUsuario">
+      <% if @usuario.errors.any? %>
+        <div>
+          <% @usuario.errors.full_messages.each do |mensagem| %>
+            <p><%= mensagem %></p>
+          <% end %>
+        </div>
+      <% end %>
+
+      <%= form_with model: @usuario do |form| %>
+
+        <div class="form-group">
+          <%= form.label :nome, "Nome" %>
+          <%= form.text_field :nome, required: true, class:"preencher" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :cpf, "CPF" %>
+          <%= form.text_field :cpf, required: true, class:"preencher" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :telefone, "Telefone" %>
+          <%= form.text_field :telefone, required: true, class:"preencher" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email, "E-mail" %>
+          <%= form.email_field :email, required: true, class:"preencher" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :idade, "Idade" %>
+          <%= form.number_field :idade, required: true, min: 0, class:"preencher" %>
+        </div>
+
+        <div>
+          <%= form.submit "Cadastrar", class:"botaoSalvarNS" %>
+        </div>
+  </div>        
+</div>
+
+<% end %>
