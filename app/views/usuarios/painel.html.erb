@@ -34,12 +34,34 @@
           <%= emprestimo.status %>
         </p>
 
-        <% if emprestimo.data_devolucao.present? %>
-          <p>
-            <strong>Data da devolução:</strong>
-            <%= emprestimo.data_devolucao %>
-          </p>
-        <% end %>
+          <% if emprestimo.data_devolucao.nil? %>
+
+            <% if emprestimo.renovacoes == 0 &&
+                  emprestimo.data_prevista_devolucao >= Date.current %>
+
+              <%= button_to "Renovar por +20 dias",
+                  renovar_emprestimo_path(emprestimo),
+                  method: :patch,
+                  class: "botaoRenovar" %>
+
+            <% elsif emprestimo.renovacoes >= 1 %>
+
+              <p>
+                <strong>Renovação:</strong>
+                já utilizada
+              </p>
+
+            <% elsif emprestimo.data_prevista_devolucao < Date.current %>
+
+              <p>
+                <strong>Renovação:</strong>
+                indisponível por atraso
+              </p>
+
+            <% end %>
+
+          <% end %>
+                      
 
         <hr>
 

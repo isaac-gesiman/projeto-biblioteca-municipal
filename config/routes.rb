@@ -46,4 +46,7 @@ Rails.application.routes.draw do
     patch :devolver
   end
 end
+  patch "/emprestimos/:id/renovar",
+        to: "emprestimos#renovar",
+        as: :renovar_emprestimo
 end
