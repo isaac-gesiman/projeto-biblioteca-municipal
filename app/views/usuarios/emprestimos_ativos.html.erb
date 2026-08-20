@@ -1,0 +1,102 @@
+<div class="faixada">
+  <h1 class="itemFaixa h1faixa">Biblioteca Municipal de Mossoró</h1>
+
+  <%= image_tag "prefeitura log.png",
+      class: "itemFaixa logo-prefeitura" %>
+</div>
+
+<h2 class="titulo">Meus Empréstimos</h2>
+<div class="painelLogin">
+  <p>Olá, <%= @usuario.nome %>!</p>
+
+  <% if @emprestimos.any? %>
+
+  <% @emprestimos.each do |emprestimo| %>
+
+      <% if emprestimo.atrasado? %>
+        <div class="multaAtraso">
+          <p>
+            <strong>Atraso:</strong>
+            <%= emprestimo.dias_atraso %>
+            <%= emprestimo.dias_atraso == 1 ? "dia" : "dias" %>
+          </p>
+
+          <p>
+            <strong>Multa:</strong>
+            <%= number_to_currency(
+                  emprestimo.multa,
+                  unit: "R$ ",
+                  separator: ",",
+                  delimiter: "."
+                ) %>
+          </p>
+        </div>
+      <% else %>
+        <p class="semMulta">
+          <strong>Multa:</strong> R$ 0,00
+        </p>
+      <% end %>
+
+      <div>
+
+        <p>
+          <strong>Livro:</strong>
+          <%= emprestimo.livro.titulo %>
+        </p>
+
+        <p>
+          <strong>Data do empréstimo:</strong>
+          <%= emprestimo.data_emprestimo.to_date %>
+        </p>
+
+        <p>
+          <strong>Devolução prevista:</strong>
+          <%= emprestimo.data_prevista_devolucao %>
+        </p>
+
+        <p>
+          <strong>Status:</strong>
+          <%= emprestimo.status %>
+        </p>
+
+          <% if emprestimo.data_devolucao.nil? %>
+
+            <% if emprestimo.renovacoes == 0 &&
+                  emprestimo.data_prevista_devolucao >= Date.current %>
+
+              <%= button_to "Renovar por +20 dias",
+                  renovar_emprestimo_path(emprestimo),
+                  method: :patch,
+                  class: "botaoRenovar" %>
+
+            <% elsif emprestimo.renovacoes >= 1 %>
+
+              <p>
+                <strong>Renovação:</strong>
+                já utilizada
+              </p>
+
+            <% elsif emprestimo.data_prevista_devolucao < Date.current %>
+
+              <p>
+                <strong>Renovação:</strong>
+                indisponível por atraso
+              </p>
+
+            <% end %>
+
+          <% end %>
+                      
+
+        <hr>
+
+      </div>
+    <% end %>
+
+  <% else %>
+
+    <p>Você ainda não possui empréstimos.</p>
+</div>
+<% end %>
+
+<%= button_to "Sair", logout_usuario_path, method: :delete %>

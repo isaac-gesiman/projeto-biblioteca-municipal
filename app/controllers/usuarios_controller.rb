@@ -1,7 +1,9 @@
 class UsuariosController < ApplicationController
   before_action :exigir_bibliotecario, only: [:new, :create]
-  before_action :exigir_usuario, only: [:nova_senha, :atualizar_senha, :painel]
 
+  before_action :exigir_usuario,
+                only: [:nova_senha, :atualizar_senha, :painel,
+                      :emprestimos_ativos, :historico]
   def new
     @usuario = Usuario.new
   end
@@ -56,12 +58,21 @@ class UsuariosController < ApplicationController
   end
 
   def painel
-    @usuario = usuario_atual
-
-    @emprestimos = @usuario.emprestimos
-                          .includes(:livro)
-                          .order(data_emprestimo: :desc)
   end
+
+  def emprestimos_ativos
+  @emprestimos = usuario_atual.emprestimos
+    .where(data_devolucao: nil)
+    .includes(:livro)
+    .order(data_emprestimo: :desc)
+end
+
+def historico
+  @emprestimos = usuario_atual.emprestimos
+    .where.not(data_devolucao: nil)
+    .includes(:livro)
+    .order(data_devolucao: :desc)
+end
 
   private
 
