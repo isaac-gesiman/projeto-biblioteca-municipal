@@ -407,6 +407,19 @@
   font-size: 30px;
 }
 
+.botaoRenovar {
+  background-color: #0cc0df;
+  color: white;
+
+  border: 0px;
+
+  padding: 10px 20px;
+
+  font-size: 2vw;
+
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
 /*o principal foco é para o leitor pois ele que usa o celular, mas com o codigo feito para no futuro se preciso o bibliotecario tbm usar*/
     .containerCadastroBibliotecario,
@@ -516,6 +529,7 @@
 
         box-sizing: border-box !important;
     }
+    
     .botaoEntrar {
         width: 100% !important;
         height: 58px !important;
@@ -552,5 +566,26 @@
 
     .painelLogin strong {
         font-size: 18px !important;
+    }
+    .botaoRenovar {
+        width: 100% !important;
+
+        min-height: 52px;
+
+        padding: 10px 14px;
+
+        font-size: 20px !important;
+
+        border: 0px;
+
+        border-radius: 8px;
+    }
+
+    .painelLogin .button_to {
+        width: 100%;
+
+        margin: 15px 0;
+
+        padding: 0;
     }
 }

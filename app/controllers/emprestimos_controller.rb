@@ -1,5 +1,6 @@
 class EmprestimosController < ApplicationController
-  before_action :exigir_bibliotecario
+  before_action :exigir_bibliotecario, except: [:renovar]
+  before_action :exigir_usuario, only: [:renovar]
   
     def index
         @emprestimos = Emprestimo
@@ -52,8 +53,39 @@ class EmprestimosController < ApplicationController
 
           redirect_to emprestimos_path,
                       notice: "Livro devolvido com sucesso!"
-    end
+        end
+        def renovar
+      @emprestimo = usuario_atual.emprestimos.find(params[:id])
 
+      if @emprestimo.data_devolucao.present?
+        redirect_to painel_usuario_path,
+                    alert: "Este empréstimo já foi devolvido."
+        return
+      end
+
+      if @emprestimo.renovacoes >= 1
+        redirect_to painel_usuario_path,
+                    alert: "Este empréstimo já foi renovado."
+        return
+      end
+
+      if @emprestimo.data_prevista_devolucao < Date.current
+        redirect_to painel_usuario_path,
+                    alert: "Empréstimos em atraso não podem ser renovados."
+        return
+      end
+
+      @emprestimo.update!(
+        data_prevista_devolucao:
+          @emprestimo.data_prevista_devolucao + 20.days,
+
+        renovacoes:
+          @emprestimo.renovacoes + 1
+      )
+
+      redirect_to painel_usuario_path,
+                  notice: "Empréstimo renovado por mais 20 dias."
+    end
   private
 
   def carregar_opcoes
