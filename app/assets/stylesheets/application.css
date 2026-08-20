@@ -430,6 +430,9 @@
         gap: 18px !important;
     }
 
+    .containerLogin{
+        box-sizing: border-box !important;
+    }
 
   /* Se o formulário em si estiver usando grid */
     form {
@@ -512,5 +515,34 @@
         font-size: 24px !important;
 
         margin-top: 10px;
+    }
+
+    /* PAINEL DO LEITOR */
+    .titulo {
+        width: 92%;
+
+        margin: 28px auto 25px auto;
+
+        font-size: 28px !important;
+    }
+
+    .painelLogin {
+        width: 92% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        font-size: 18px !important;
+    }
+
+    .painelLogin p {
+        font-size: 18px !important;
+        line-height: 1.5;
+
+        margin: 10px 0;
+    }
+
+    .painelLogin strong {
+        font-size: 18px !important;
     }
 }
