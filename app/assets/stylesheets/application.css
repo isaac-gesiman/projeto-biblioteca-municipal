@@ -408,292 +408,92 @@
 }
 
 @media (max-width: 768px) {
-
-  /* =========================
-     AJUSTES GERAIS
-  ========================== */
-
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  p {
-    font-size: 17px;
-  }
-
-
-  /* =========================
-     CABEÇALHO
-  ========================== */
-
-  .faixadaHome {
-    width: 100%;
-    min-height: 125px;
-    height: auto;
-
-    padding: 20px 25px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .itemFaixaHome {
-    font-size: 19px;
-    line-height: 1.2;
-    text-align: left;
-    margin: 0;
-  }
-
-  .imgPref {
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .imgPref img {
-    max-width: 135px;
-    width: 100%;
-    height: auto;
-  }
-
-
-  /* =========================
-     HOME
-  ========================== */
-
-  .opcoes-login {
-    width: 100%;
-
-    flex-direction: column;
-    align-items: center;
-
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .botao-home {
-    width: 85%;
-    max-width: 340px;
-    height: 80px;
-
-    font-size: 25px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  /* =========================
-     TÍTULOS DAS PÁGINAS
-  ========================== */
-
-  body > h1,
-  body > h2,
-  main > h1,
-  main > h2 {
-    width: 90%;
-    margin: 28px auto 20px auto;
-  }
-
-
-  /* =========================
-     FORMULÁRIOS
-  ========================== */
-
-  form {
-    width: 92%;
-    max-width: 420px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    padding: 20px 13px;
-  }
-
-  form div {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 7px;
-    margin-bottom: 18px;
-  }
-
-  form label {
-    font-size: 18px;
-    display: block;
-    width: 100%;
-  }
-
-  form input[type="text"],
-  form input[type="email"],
-  form input[type="password"],
-  form input[type="number"],
-  form input[type="tel"],
-  form select,
-  form textarea {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 52px;
-
-    padding: 10px 13px;
-
-    font-size: 17px;
-
-    border-radius: 10px;
-  }
-
-  form textarea {
-    min-height: 90px;
-    resize: vertical;
-  }
-
-  form select {
-    height: 52px;
-  }
-
-
-  /* =========================
-     BOTÕES DOS FORMULÁRIOS
-  ========================== */
-
-  form input[type="submit"],
-  form button,
-  .button_to button {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 55px;
-
-    padding: 10px;
-
-    font-size: 22px;
-
-    border: none;
-    border-radius: 10px;
-
-    cursor: pointer;
-  }
-
-
-  /* =========================
-     LINKS COMO "ESQUECI SENHA"
-  ========================== */
-
-  form a,
-  .esqueci-senha {
-    display: inline-block;
-
-    margin-top: 8px;
-
-    font-size: 16px;
-  }
-
-
-  /* =========================
-     PAINEL DO BIBLIOTECÁRIO
-  ========================== */
-
-  [class*="painel"] {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  [class*="opcoes"],
-  [class*="menu"] {
-    max-width: 100%;
-  }
-
-  [class*="painel"] a {
-    max-width: 100%;
-  }
-
-
-  /* Caso os cards do painel estejam em flex/grid */
-  .opcoes-painel,
-  .painel-opcoes,
-  .menu-painel {
-    width: 90%;
-    margin: 25px auto;
-
+.containerCadastroBibliotecario,
+  .containerCadastroUsuario,
+  .containerCadastroLivro,
+  .containerCadastroCategoria,
+  .containerEmprestimo,
+  .containerLogin,
+  .containerPainel {
     display: grid !important;
     grid-template-columns: 1fr !important;
+
+    width: 92% !important;
+    max-width: 450px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
 
     gap: 18px !important;
   }
 
-  .opcoes-painel a,
-  .painel-opcoes a,
-  .menu-painel a {
+
+  /* Se o formulário em si estiver usando grid */
+  form {
+    grid-template-columns: 1fr !important;
+
+    width: 92% !important;
+    max-width: 450px !important;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* Cada item ocupa a largura inteira */
+  form > div {
     width: 100% !important;
-    min-height: 85px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    font-size: 18px;
+    max-width: 100% !important;
   }
 
-
-  /* =========================
-     TABELAS / EMPRÉSTIMOS
+   /* ==========================
+     BOTÕES
   ========================== */
 
-  table {
-    width: 100%;
-    display: block;
-
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  th,
-  td {
-    padding: 10px;
-    font-size: 15px;
-  }
-
-
-  /* =========================
-     EVITA ITENS SAINDO DA TELA
-  ========================== */
-
-  input,
-  select,
-  textarea,
+  input[type="submit"],
   button,
-  a,
-  div {
-    max-width: 100%;
+  .button_to button {
+    width: 100% !important;
+
+    min-height: 52px !important;
+
+    padding: 10px 15px !important;
+
+    font-size: 20px !important;
+
+    border-radius: 8px;
+  }
+/* ==========================
+     HOME
+  ========================== */
+
+  .opcoes-login {
+    flex-direction: column !important;
+
+    width: 100%;
+    gap: 20px !important;
+
+    align-items: center;
   }
 
+  .botao-home {
+    width: 85% !important;
+    max-width: 340px !important;
+
+    height: 80px !important;
+
+    font-size: 25px !important;
+  }
+
+  .loginBibliotecario{
+    font-size: 1.4vw;
+    color:white;
+
+
+  }
+
+  .loginBibliotecariosenha{
+    font-size: 1.4vw;
+    color:white;
+  }
 }
