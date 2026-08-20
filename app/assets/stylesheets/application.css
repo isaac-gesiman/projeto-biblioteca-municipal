@@ -501,6 +501,7 @@
     .preencherLoginB {
         width: 100% !important;
         height: 55px !important;
+        width-max:400px !important;
 
         padding: 10px 14px !important;
 
