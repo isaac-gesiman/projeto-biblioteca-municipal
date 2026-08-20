@@ -38,6 +38,8 @@ class Emprestimo < ApplicationRecord
     end
   end
 
+  public
+  
   MULTA_POR_DIA = 1.00
 
   def dias_atraso
