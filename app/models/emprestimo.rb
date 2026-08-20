@@ -37,4 +37,29 @@ class Emprestimo < ApplicationRecord
       )
     end
   end
+
+  MULTA_POR_DIA = 1.00
+
+  def dias_atraso
+    return 0 if data_prevista_devolucao.blank?
+
+    data_referencia =
+      if data_devolucao.present?
+        data_devolucao.to_date
+      else
+        Date.current
+      end
+
+    atraso = (data_referencia - data_prevista_devolucao.to_date).to_i
+
+    [atraso, 0].max
+  end
+
+  def multa
+    dias_atraso * MULTA_POR_DIA
+  end
+
+  def atrasado?
+    dias_atraso.positive?
+  end
 end

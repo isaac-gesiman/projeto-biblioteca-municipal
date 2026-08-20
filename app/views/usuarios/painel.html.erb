@@ -11,7 +11,32 @@
 
   <% if @emprestimos.any? %>
 
-    <% @emprestimos.each do |emprestimo| %>
+  <% @emprestimos.each do |emprestimo| %>
+
+      <% if emprestimo.atrasado? %>
+        <div class="multaAtraso">
+          <p>
+            <strong>Atraso:</strong>
+            <%= emprestimo.dias_atraso %>
+            <%= emprestimo.dias_atraso == 1 ? "dia" : "dias" %>
+          </p>
+
+          <p>
+            <strong>Multa:</strong>
+            <%= number_to_currency(
+                  emprestimo.multa,
+                  unit: "R$ ",
+                  separator: ",",
+                  delimiter: "."
+                ) %>
+          </p>
+        </div>
+      <% else %>
+        <p class="semMulta">
+          <strong>Multa:</strong> R$ 0,00
+        </p>
+      <% end %>
+
       <div>
 
         <p>

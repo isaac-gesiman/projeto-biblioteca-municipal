@@ -15,7 +15,30 @@
       <p><strong>Bibliotecário:</strong> <%= emprestimo.bibliotecario.nome %></p>
       <p><strong>Data do empréstimo:</strong> <%= emprestimo.data_emprestimo.to_date %></p>
       <p><strong>Devolução prevista:</strong> <%= emprestimo.data_prevista_devolucao %></p>
+      
+    <% if emprestimo.atrasado? %>
+      <div class="multaAtraso">
+        <p>
+          <strong>Atraso:</strong>
+          <%= emprestimo.dias_atraso %>
+          <%= emprestimo.dias_atraso == 1 ? "dia" : "dias" %>
+        </p>
 
+        <p>
+          <strong>Multa:</strong>
+          <%= number_to_currency(
+                emprestimo.multa,
+                unit: "R$ ",
+                separator: ",",
+                delimiter: "."
+              ) %>
+        </p>
+      </div>
+    <% else %>
+      <p class="semMulta">
+        <strong>Multa:</strong> R$ 0,00
+      </p>
+    <% end %>
       <%= button_to "Devolver",
           devolver_emprestimo_path(emprestimo),
           method: :patch %>

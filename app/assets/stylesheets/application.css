@@ -420,6 +420,18 @@
   cursor: pointer;
 }
 
+.multaAtraso {
+  margin-top: 1vw;
+  padding: 1vw;
+
+  border-radius: 8px;
+}
+
+.multaAtraso p,
+.semMulta {
+  font-size: 1.3vw;
+}
+
 @media (max-width: 768px) {
 /*o principal foco é para o leitor pois ele que usa o celular, mas com o codigo feito para no futuro se preciso o bibliotecario tbm usar*/
     .containerCadastroBibliotecario,
@@ -587,5 +599,16 @@
         margin: 15px 0;
 
         padding: 0;
+    }
+
+    .multaAtraso {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+    .multaAtraso p,
+        .semMulta {
+        font-size: 18px !important;
     }
 }
