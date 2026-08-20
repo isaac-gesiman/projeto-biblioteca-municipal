@@ -24,10 +24,10 @@
 }
 
 .logo-prefeitura{
-  width: 50px;
-  height: auto;
-  margin-left: auto;
-  margin-right: 100px;
+    width: 50px;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
 }
 
 .itemFaixa, h1{
@@ -355,81 +355,85 @@
 
 /*pagina home*/
 .faixadaHome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  background-color: #0cc0df;
-  height: 120px;
-  width: 100%;
+    background-color: #0cc0df;
+    height: 120px;
+    width: 100%;
 }
 
 .itemFaixaHome {
-  color: white;
-  margin: 0;
-  text-align: center;
+    color: white;
+    margin: 0;
+    text-align: center;
 }
 
 .imgPref {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  width: 100%;
-  margin-top: 40px;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .imgPref img {
-  display: block;
-  max-width: 300px;
-  height: auto;
+    display: block;
+    max-width: 300px;
+    height: auto; 
 }
 
 .opcoes-login {
-  display: flex;
-  justify-content: center;
-  gap: 220px;
-  margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 220px;
+    margin-top: 80px;
 }
 
 .botao-home {
-  background-color: #19bdd2;
-  color: white;
-  text-decoration: none;
+    background-color: #19bdd2;
+    color: white;
+    text-decoration: none;
 
-  width: 220px;
-  height: 100px;
+    padding: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    border-radius: 10px;
 
-  font-size: 30px;
+    width: 220px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
 }
 
 .botaoRenovar {
-  background-color: #0cc0df;
-  color: white;
+    background-color: #0cc0df;
+    color: white;
 
-  border: 0px;
+    border: 0px;
 
-  padding: 10px 20px;
+    padding: 10px 20px;
 
-  font-size: 2vw;
+    font-size: 2vw;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .multaAtraso {
-  margin-top: 1vw;
-  padding: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
 
-  border-radius: 8px;
+    border-radius: 8px;
 }
 
 .multaAtraso p,
 .semMulta {
-  font-size: 1.3vw;
+    font-size: 1.3vw;
 }
 
 @media (max-width: 768px) {
