@@ -61,18 +61,20 @@ class UsuariosController < ApplicationController
   end
 
   def emprestimos_ativos
-  @emprestimos = usuario_atual.emprestimos
+  @usuario = usuario_atual
+
+  @emprestimos = @usuario.emprestimos
     .where(data_devolucao: nil)
     .includes(:livro)
     .order(data_emprestimo: :desc)
-end
+  end
 
-def historico
-  @emprestimos = usuario_atual.emprestimos
-    .where.not(data_devolucao: nil)
-    .includes(:livro)
-    .order(data_devolucao: :desc)
-end
+  def historico
+    @emprestimos = usuario_atual.emprestimos
+      .where.not(data_devolucao: nil)
+      .includes(:livro)
+      .order(data_devolucao: :desc)
+  end
 
   private
 
